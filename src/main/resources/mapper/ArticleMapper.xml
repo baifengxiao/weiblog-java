@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.this0.blog.mapper.ArticleMapper">
+    <select id="selectAllByArticle" resultType="Article">
+        select id,title,content,cid,uid,create_time,update_time from article
+    <where>
+        <if test="cid!=null and cid !=0">
+            cid=#{cid}
+        </if>
+    </where>
+    </select>
+</mapper>
