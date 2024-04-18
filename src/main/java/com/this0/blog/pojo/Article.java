@@ -15,6 +15,6 @@ public class Article {
     private String content; //文章内容
     private Long cid; //分类id
     private Long uid; //用户id
-    private Date create_time;
-    private Date update_time;
+    private Date createTime;
+    private Date updateTime;
 }
