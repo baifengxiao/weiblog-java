@@ -26,5 +26,12 @@ public class ArticleController {
         return Result.ok(articleList);
 
     }
+    @GetMapping("/findArticleById/{id}")
+    @Operation(summary = "根据文章id查询文章")
+    public Result selectArticleById(@PathVariable Integer id) {
+        Article article = articleService.findArticleById(id);
+        return Result.ok(article);
+
+    }
 
 }

@@ -20,4 +20,11 @@ public class ArticleServiceImpl implements ArticleService {
     public List<Article> showAllByArticle(Article article) {
         return articleMapper.selectAllByArticle(article);
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Article findArticleById(Integer id) {
+        return  articleMapper.selectArticleById(id);
+
+    }
 }
