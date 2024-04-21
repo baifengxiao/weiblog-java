@@ -10,7 +10,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Article {
-    private Long id;
+    private Integer id;
     private String title; //文章标题
     private String content; //文章内容
     private Long cid; //分类id
