@@ -14,4 +14,8 @@
         from article where id=#{id}
 
     </select>
+    <select id="selectArticleByUid" resultType="com.this0.blog.pojo.Article">
+        select id, title, content, cid, uid, create_time, update_time
+        from article where uid=#{uid}
+    </select>
 </mapper>

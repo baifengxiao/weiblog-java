@@ -27,4 +27,10 @@ public class ArticleServiceImpl implements ArticleService {
         return  articleMapper.selectArticleById(id);
 
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Article> showArticleByUid(Integer uid) {
+        return articleMapper.selectArticleByUid(uid);
+    }
 }

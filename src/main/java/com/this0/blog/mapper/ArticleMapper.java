@@ -10,4 +10,5 @@ public interface ArticleMapper {
     List<Article> selectAllByArticle(Article article);
 
     Article selectArticleById(Integer id);
+    List<Article> selectArticleByUid(Integer id);
 }

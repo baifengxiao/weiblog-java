@@ -33,5 +33,12 @@ public class ArticleController {
         return Result.ok(article);
 
     }
+    @GetMapping("/showAllByUid/{uid}")
+    @Operation(summary = "根据文章uid查询文章")
+    public Result showAllByUid(@PathVariable("uid") Integer uid) {
+        List<Article> articleList = articleService.showArticleByUid(uid);
+        return Result.ok(articleList);
+
+    }
 
 }
