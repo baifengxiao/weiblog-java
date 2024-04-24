@@ -11,4 +11,6 @@ public interface ArticleService {
     Article findArticleById(Integer id);
 
     List<Article> showArticleByUid(Integer uid);
+
+    Integer changeArticle(Article article);
 }

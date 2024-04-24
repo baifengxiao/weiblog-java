@@ -41,4 +41,14 @@ public class ArticleController {
 
     }
 
+    @PutMapping("/")
+    @Operation(summary = "根据文章id修改文章")
+    public Result changeArticle(@RequestBody Article article){
+        Integer result = articleService.changeArticle(article);
+        if (result>0){
+            return Result.ok();
+        }
+        return Result.fail();
+    }
+
 }

@@ -24,7 +24,7 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     @Transactional(readOnly = true)
     public Article findArticleById(Integer id) {
-        return  articleMapper.selectArticleById(id);
+        return articleMapper.selectArticleById(id);
 
     }
 
@@ -32,5 +32,10 @@ public class ArticleServiceImpl implements ArticleService {
     @Transactional(readOnly = true)
     public List<Article> showArticleByUid(Integer uid) {
         return articleMapper.selectArticleByUid(uid);
+    }
+
+    @Override
+    public Integer changeArticle(Article article) {
+        return articleMapper.updateArticle(article);
     }
 }
