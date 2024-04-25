@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.this0.blog.mapper.ArticleMapper">
+    <insert id="insertArticle">
+        insert into article(title, content, cid, uid)
+        values (#{title}, #{content}, #{cid}, #{uid})
+    </insert>
     <update id="updateArticle">
         update article
         set title  =#{title},
@@ -9,21 +13,29 @@
         where id = #{id}
 
     </update>
+    <delete id="deleteArticleById">
+        delete
+        from article
+        where id =
+              #{id}
+    </delete>
     <select id="selectAllByArticle" resultType="Article">
         select id,title,content,cid,uid,create_time,update_time from article
-    <where>
-        <if test="cid!=null and cid !=0">
-            cid=#{cid}
-        </if>
-    </where>
+        <where>
+            <if test="cid!=null and cid !=0">
+                cid=#{cid}
+            </if>
+        </where>
     </select>
     <select id="selectArticleById" resultType="com.this0.blog.pojo.Article">
         select id, title, content, cid, uid, create_time, update_time
-        from article where id=#{id}
+        from article
+        where id = #{id}
 
     </select>
     <select id="selectArticleByUid" resultType="com.this0.blog.pojo.Article">
         select id, title, content, cid, uid, create_time, update_time
-        from article where uid=#{uid}
+        from article
+        where uid = #{uid}
     </select>
 </mapper>

@@ -13,4 +13,7 @@ public interface ArticleMapper {
     List<Article> selectArticleByUid(Integer id);
 
     Integer updateArticle(Article article);
+    Integer insertArticle(Article article);
+
+    Integer deleteArticleById(Integer id);
 }

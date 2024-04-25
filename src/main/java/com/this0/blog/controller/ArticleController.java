@@ -51,4 +51,25 @@ public class ArticleController {
         return Result.fail();
     }
 
+    @PostMapping("/")
+    @Operation(summary = "新增文章")
+    public Result addArticle(@RequestBody Article article) {
+        Integer result = articleService.addArticle(article);
+        if (result > 0) {
+            return Result.ok();
+        }
+        return Result.fail();
+    }
+
+    @DeleteMapping("/{id}")
+    @Operation(summary = "删除文章")
+    public Result removeArticleById(@PathVariable("id") Integer id) {
+        Integer result = articleService.removeArticleById(id);
+        if (result > 0) {
+            return Result.ok();
+        }
+        return Result.fail();
+
+    }
+
 }

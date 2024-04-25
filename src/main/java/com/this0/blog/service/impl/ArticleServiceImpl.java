@@ -38,4 +38,15 @@ public class ArticleServiceImpl implements ArticleService {
     public Integer changeArticle(Article article) {
         return articleMapper.updateArticle(article);
     }
+
+
+    @Override
+    public Integer addArticle(Article article) {
+        return articleMapper.insertArticle(article);
+    }
+
+    @Override
+    public Integer removeArticleById(Integer id) {
+        return articleMapper.deleteArticleById(id);
+    }
 }
