@@ -8,4 +8,5 @@ import java.util.List;
 @Mapper
 public interface CategoryMapper {
     List<Category> selectAllCategory();
+    List<Category> selectByPage(Category category);
 }
