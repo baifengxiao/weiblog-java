@@ -33,5 +33,15 @@ public class CategoryController {
         Map allByPage = categoryService.findAllByPage(pageIndex, pageSize, category);
         return Result.ok(allByPage);
     }
+    @PutMapping
+    @Operation(summary = "修改分类名称")
+    public Result changeCategory(@RequestBody Category category){
+        Integer result = categoryService.changeCategory(category);
+        if (result>0){
+            return Result.ok();
+        }
+        return Result.fail();
+
+    }
 
 }

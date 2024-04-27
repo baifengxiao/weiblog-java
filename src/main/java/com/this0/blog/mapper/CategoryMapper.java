@@ -9,4 +9,6 @@ import java.util.List;
 public interface CategoryMapper {
     List<Category> selectAllCategory();
     List<Category> selectByPage(Category category);
+
+    Integer updateCategory(Category category);
 }

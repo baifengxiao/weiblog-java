@@ -38,4 +38,9 @@ public class CategoryServiceImpl implements CategoryService {
         map.put("list",categoryList);
         return map;
     }
+
+    @Override
+    public Integer changeCategory(Category category) {
+        return categoryMapper.updateCategory(category);
+    }
 }
