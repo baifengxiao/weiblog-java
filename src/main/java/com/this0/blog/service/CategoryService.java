@@ -10,4 +10,5 @@ public interface CategoryService {
     Map findAllByPage(Integer pageIndex, Integer pageSize, Category category );
 
     Integer changeCategory(Category category);
+    Integer addCategory(Category category);
 }

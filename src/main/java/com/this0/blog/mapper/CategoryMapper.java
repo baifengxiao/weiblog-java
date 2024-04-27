@@ -11,4 +11,6 @@ public interface CategoryMapper {
     List<Category> selectByPage(Category category);
 
     Integer updateCategory(Category category);
+
+    Integer insertCategory(Category category);
 }

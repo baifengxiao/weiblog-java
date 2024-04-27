@@ -43,4 +43,9 @@ public class CategoryServiceImpl implements CategoryService {
     public Integer changeCategory(Category category) {
         return categoryMapper.updateCategory(category);
     }
+
+    @Override
+    public Integer addCategory(Category category) {
+        return categoryMapper.insertCategory(category);
+    }
 }

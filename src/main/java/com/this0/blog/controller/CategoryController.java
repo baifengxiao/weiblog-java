@@ -44,4 +44,15 @@ public class CategoryController {
 
     }
 
+    @PostMapping
+    @Operation(summary = "新增分类")
+    public Result addCategory(@RequestBody Category category) {
+        Integer result = categoryService.addCategory(category);
+        if (result > 0) {
+            return Result.ok();
+        }
+        return Result.fail();
+
+    }
+
 }
