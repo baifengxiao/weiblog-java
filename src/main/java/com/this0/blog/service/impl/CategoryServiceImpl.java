@@ -48,4 +48,11 @@ public class CategoryServiceImpl implements CategoryService {
     public Integer addCategory(Category category) {
         return categoryMapper.insertCategory(category);
     }
+
+
+
+    @Override
+    public Integer removeCategory(Integer cid) {
+        return categoryMapper.deleteCategory(cid);
+    }
 }

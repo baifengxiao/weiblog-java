@@ -11,4 +11,6 @@ public interface CategoryService {
 
     Integer changeCategory(Category category);
     Integer addCategory(Category category);
+
+    Integer removeCategory(Integer cid);
 }

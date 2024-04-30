@@ -55,4 +55,15 @@ public class CategoryController {
 
     }
 
+    @DeleteMapping("/{cid}")
+    @Operation(summary = "删除分类")
+    public Result removeCategory(@PathVariable Integer cid) {
+        Integer result = categoryService.removeCategory(cid);
+        if (result > 0) {
+            return Result.ok();
+        }
+        return Result.fail();
+
+    }
+
 }

@@ -14,7 +14,7 @@ import java.util.Date;
 public class Category {
 
     @Schema(description = "分类id")
-    private Long cid;
+    private Integer cid;
     @Schema(description = "分类名称")
     private String cname;
     private Date create_time;
