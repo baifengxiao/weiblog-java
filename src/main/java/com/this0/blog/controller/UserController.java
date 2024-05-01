@@ -37,4 +37,30 @@ public class UserController {
         return Result.fail();
     }
 
+    @Operation(summary = "用户查询")
+    @GetMapping("/{uid}")
+    public Result showUser(@PathVariable Integer uid) {
+
+
+        User user = userService.showUserByUid(uid);
+
+        //用不上判断
+        return Result.ok(user);
+
+    }
+
+    @Operation(summary = "用户信息更新")
+    @PutMapping
+    public Result changeUser(@RequestBody User user) {
+
+        Integer result = userService.changeUser(user);
+        if (result > 0) {
+            return Result.ok();
+        } else {
+            return Result.fail();
+        }
+
+
+    }
+
 }

@@ -28,4 +28,15 @@ public class UserServiceImpl  implements UserService {
         }
         return null;
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public User showUserByUid(Integer uid) {
+        return userMapper.showUserByUid(uid);
+    }
+
+    @Override
+    public Integer changeUser(User user) {
+        return userMapper.updateUser(user);
+    }
 }
